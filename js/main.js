@@ -887,4 +887,15 @@
         sliderShape01.style.transform = 'none';
     }
 
+    // Active nav link highlight
+    $(function(){
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        $('.main-menu ul li a').each(function(){
+            var href = $(this).attr('href');
+            if (href === current) {
+                $(this).addClass('active-page');
+            }
+        });
+    });
+
 })(jQuery);

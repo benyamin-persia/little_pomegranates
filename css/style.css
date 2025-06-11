@@ -56,6 +56,8 @@
 
 /* 1. Theme default css */
 body {
+    margin: 0;
+    padding: 0;
     font-family: var(--default-font);
     font-size: 16px;
     font-weight: normal;
@@ -3983,11 +3985,6 @@ section:hover .section-title h2::before {
 .services-box2 .services-content2 {
     padding: 30px 0 30px 0;
     position: relative;
-}
-
-.services-box2 .services-content2 h3 {
-    font-weight: 700;
-    font-size: 24px;
 }
 
 .services-box2 .services-content2 .icon {
@@ -7982,7 +7979,7 @@ section:hover .section-title h2::before {
 }
 
 .button-group button.active {
-    color: #030c26;
+    color: #FF4880;
     border-bottom: 1px solid var(--h-text-color);
     font-weight: 500;
 }
@@ -14370,6 +14367,15 @@ blockquote cite {
     color: var(--btn-two-color);
 }
 
+@keyframes bloomingEffect {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.tagline-text {
+    animation: bloomingEffect 2s ease-in-out;
+}
 
 @-webkit-keyframes line-slide {
     0% {
@@ -14401,4 +14407,22 @@ blockquote cite {
 
 .inst-text a:hover {
     color: var(--h-secondery-color);
+}
+
+/* Active nav link styling */
+.main-menu ul li a.active-page {
+    color: #FF4880 !important;
+}
+
+/* Remove any top spacing so the slider touches the top */
+.slider-area {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Adjust logo size and positioning */
+.logo {
+    margin-top: 8px;
+    margin-right: 15px;
+    width: 180px !important;
 }
