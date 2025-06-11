@@ -3821,6 +3821,37 @@
         padding-bottom: 120px;
     }
 
+    @media only screen and (max-width: 767px) {
+        .about-text {
+            position: static;
+            width: auto;
+            height: auto;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .about-text span {
+            font-size: 18px;
+        }
+        .about-text strong {
+            font-size: 36px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .about-text {
+            position: static;
+            width: auto;
+            height: auto;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .about-text span {
+            font-size: 18px;
+        }
+        .about-text strong {
+            font-size: 36px;
+        }
+    }
 }
 
 /* Large Mobile :480px. */
@@ -3940,4 +3971,26 @@
     .button-group button {
         margin: 0 2px;
 
+    }
+
+}
+
+.about-text {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    text-align: center !important;
+    padding: 10px 0 !important;
+    font-size: 18px !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.about-text strong {
+    font-size: 36px !important;
+}
+
+.year-text {
+    color: inherit; /* Use the same color as the parent element */
+    font-size: inherit; /* Keep the same font size */
     }
