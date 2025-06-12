@@ -338,6 +338,10 @@
     });
 
     // testimonial-active
+    var $testimonialActive = $('.testimonial-active');
+    var items = $testimonialActive.children().get();
+    items.sort(function() { return Math.random() - 0.5; });
+    $testimonialActive.empty().append(items);
     $('.testimonial-active').slick({
         dots: true,
         infinite: true,
