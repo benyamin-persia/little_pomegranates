@@ -219,7 +219,7 @@
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-md-6 mb-15 fade-slide top" style="transform: translate(0px, 0px); opacity: 1;">
                                         <h3><a href="single-service.html">Infant Care</a></h3>
-                                        <p class="year-text" style="font-family: 'Fredoka', serif; font-size: 16px; color: #393D72;">(0–12 mo)</p>
+                                        <p class="year-text" style="font-family: 'Fredoka', serif; font-size: 16px; color: #393D72;">(0–24 months)</p>
                                         <p>Personalized care and nutritious meal plans for infants up to 12 months.</p>
                                     </div>
                                     <div class="col-md-6 mb-15 fade-slide top" style="transform: translate(0px, 0px); opacity: 1;">
@@ -1117,6 +1117,40 @@
     <script src="js/element-in-view.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const galleryContainer = document.querySelector('.portfolio .row');
+            const galleryPath = 'img/gallery/';
+
+            // Fetch the list of images from the server
+            fetch('/gallery-images')
+                .then(response => response.json())
+                .then(files => {
+                    files.forEach(file => {
+                        const colDiv = document.createElement('div');
+                        colDiv.className = 'col-lg-4 col-md-12 col-sm-12 mb-30';
+
+                        const anchor = document.createElement('a');
+                        anchor.className = 'popup-image';
+                        anchor.href = `${galleryPath}${file}`;
+
+                        const figure = document.createElement('figure');
+                        figure.className = 'gallery-image';
+
+                        const img = document.createElement('img');
+                        img.src = `${galleryPath}${file}`;
+                        img.alt = 'img';
+                        img.className = 'img';
+
+                        figure.appendChild(img);
+                        anchor.appendChild(figure);
+                        colDiv.appendChild(anchor);
+                        galleryContainer.appendChild(colDiv);
+                    });
+                })
+                .catch(error => console.error('Error loading images:', error));
+        });
+    </script>
 </body>
 
 
